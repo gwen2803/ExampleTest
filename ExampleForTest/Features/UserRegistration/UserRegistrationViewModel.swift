@@ -59,8 +59,7 @@ class UserRegistrationViewModel: ObservableObject {
     private func setupValidationBindings() {
         // Username Validation
         $username
-            .debounce(for: 0.1, scheduler: RunLoop.main)
-            .receive(on: DispatchQueue.global())
+            .debounce(for: 0.1, scheduler: DispatchQueue.global())
             .map { [weak self] username -> Result<Void, ValidationError>? in
                 guard let self = self else { return nil }
                 guard !username.isEmpty else { return nil }
@@ -71,8 +70,7 @@ class UserRegistrationViewModel: ObservableObject {
 
         // Email Validation
         $email
-            .debounce(for: 0.1, scheduler: RunLoop.main)
-            .receive(on: DispatchQueue.global())
+            .debounce(for: 0.1, scheduler: DispatchQueue.global())
             .map { [weak self] email -> Result<Void, ValidationError>? in
                 guard !email.isEmpty else { return nil }
                 return self?.validateEmail(email)
@@ -82,8 +80,7 @@ class UserRegistrationViewModel: ObservableObject {
 
         // Password Validation
         $password
-            .debounce(for: 0.1, scheduler: RunLoop.main)
-            .receive(on: DispatchQueue.global())
+            .debounce(for: 0.1, scheduler: DispatchQueue.global())
             .map { [weak self] password -> Result<Void, ValidationError>? in
                 guard let self = self else { return nil }
                 guard !password.isEmpty else { return nil }
@@ -94,8 +91,7 @@ class UserRegistrationViewModel: ObservableObject {
 
         // Password Confirmation Validation
         Publishers.CombineLatest($password, $confirmPassword)
-            .debounce(for: 0.1, scheduler: RunLoop.main)
-            .receive(on: DispatchQueue.global())
+            .debounce(for: 0.1, scheduler: DispatchQueue.global())
             .map { [weak self] password, confirm -> Result<Void, ValidationError>? in
                 guard let self = self else { return nil }
                 guard !confirm.isEmpty else { return nil }

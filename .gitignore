@@ -1,0 +1,36 @@
+# Created by Gemini for a standard Xcode project
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+#
+# Build generated
+build/
+DerivedData/
+
+# User-specific files
+*.xcodeproj/project.xcworkspace
+*.xcodeproj/xcuserdata
+*.xcworkspace/xcshareddata
+*.xcworkspace/xcuserdata
+
+# Swift Package Manager
+#
+# It's recommended to commit 'Package.resolved' to lock dependency versions.
+# The .swiftpm directory contains build artifacts and should be ignored.
+.swiftpm/
+
+# CocoaPods
+#
+# It's recommended to commit 'Podfile.lock' to lock dependency versions.
+# The Pods directory contains downloaded dependencies and should be ignored.
+Pods/
+
+# Carthage
+#
+# It's recommended to commit 'Cartfile.resolved' to lock dependency versions.
+Carthage/Checkouts
+Carthage/Build

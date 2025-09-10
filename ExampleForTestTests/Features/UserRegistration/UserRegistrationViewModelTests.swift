@@ -5,18 +5,15 @@ import Combine
 final class UserRegistrationViewModelTests: XCTestCase {
 
     var sut: UserRegistrationViewModel!
-    var cancellables: Set<AnyCancellable>!
 
     override func setUp() {
         super.setUp()
         executionTimeAllowance = 2.0 // 각 테스트의 타임아웃을 2초로 설정
         sut = UserRegistrationViewModel()
-        cancellables = []
     }
    
     override func tearDown() {
         sut = nil
-        cancellables = nil
         super.tearDown()
     }
    
